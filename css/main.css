@@ -1,0 +1,55 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  padding: 20px;
+  margin: 0;
+  background: #ffffff;
+}
+
+.navigation-module {
+  background: yellowgreen;
+}
+
+.grid-item {
+  font-weight: 800;
+  font-size: 32px;
+  padding: 20px;
+}
+
+.item-1 {
+  background: #DC2626;
+}
+
+.item-2 {
+  background: #059669;
+}
+
+.item-3 {
+  background: #f59e0b;
+}
+
+.item-4 {
+  background: #7c3aed;
+  grid-column: 7/ 10;
+  grid-row: 3 / 5;
+}
+
+.item-4__name {
+  text-align: left;
+}
+
+.item-5 {
+  background: #2563eb;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 30px);
+  grid-auto-rows: minmax(100px, aoto);
+  row-gap: 20px;
+  column-gap: 15px;
+  justify-content: center;
+}
