@@ -1,16 +1,125 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  color: white;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
+@import url("/img/city.jpg");
+.navbar-module__dropButton::after {
+  content: " ";
+  margin-left: 10px;
+  display: inline-block;
+  border-right: 2px solid #E13C12;
+  border-bottom: 2px solid #E13C12;
+  width: 10px;
+  height: 10px;
+  transform: rotate(-315deg);
 }
 
 body {
-  padding: 20px;
+  padding: 0px;
   margin: 0;
   background: #ffffff;
 }
 
-.navigation-module {
-  background: yellowgreen;
+.navbar-module {
+  height: 80px;
+  width: 100%;
+  max-width: 100vw;
+  background-image: url("https://www.planetizen.com/files/images/sunlight.jpg");
+  position: fixed;
+  display: flex;
+  top: 0;
+}
+
+.navbar-module-wrapper {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  padding: 0 48px;
+}
+
+.navbar-module__navigation {
+  display: flex;
+  justify-content: end;
+  list-style-type: none;
+  height: 50px;
+}
+
+.navbar-module__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-module__svgLogo {
+  height: 26px;
+}
+
+.navbar-module__dropDownList {
+  padding: 10px;
+  left: auto;
+}
+
+.navbar-module__dropDownList--active {
+  border-bottom-style: dashed;
+}
+
+.navbar-module__dropButton {
+  right: auto;
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  border: transparent;
+  font-size: 16px;
+}
+
+.navbar-module__link {
+  padding: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar-module__element {
+  text-decoration: none;
+  color: #353534;
+  font-size: 16px;
+}
+
+.navbar-module__projects {
+  padding: 10px;
+}
+
+.navbar-module__button {
+  margin-left: 16px;
+  padding: 16px 32px;
+  background-color: #E92F03;
+  text-decoration: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+.main-module-wrapper:before {
+  content: "";
+  position: absolute;
+}
+
+.header-module {
+  background-image: url("https://www.planetizen.com/files/images/sunlight.jpg");
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main-module {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 250px;
+}
+
+.main-module__infoNTH {
+  height: 365px;
+  font: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 65;
 }
 
 .grid-item {
