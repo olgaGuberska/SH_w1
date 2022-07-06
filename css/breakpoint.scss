@@ -1,0 +1,29 @@
+$breakpoints: (
+    phone: 640px,
+    tablet: 768px,
+    desktop: 1024px
+);
+/*
+@mixin smallDevices {
+    @media (min-width: 576px) { @content; }
+}
+
+@mixin fmediumDevices {
+    @media (min-width: 768px) { @content; }
+}
+
+@mixin largeDevices {
+    @media (max-width: 992px) { @content; }
+}
+
+@mixin desktop {
+    @media (min-width: 1200px) { @content; }
+}    
+*/
+// @media only screen and (max-width: 1024px) { 
+//     .navbar-module__navigation  {
+//         // background-color: blue!important;
+//         font-size: 3rem;
+//         margin:0 auto;
+//     }
+// }

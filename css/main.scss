@@ -1,28 +1,29 @@
-
+// *, *::before, *::after { box-sizing: border-box }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
-@import url('/img/city.jpg');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&family=Roboto:wght@100;400&display=swap');
 
-// *, *::before, *::after {
-// box-sizing: border-box;
-// // color: white;
+// $breakpoint-tablet: 768px;
 
-// }
+// @media (min-width: $b)
+
 
 $color-red: #E92F03;
 $color-orange: #E13C12;
-$color-dark-gray1: #323232;
+$color-dark-grey1: #323232;
 $color-dark-grey2:#353534;
 $color-light-grey:#838383;
 $color-white: #FFFFFF;
 $color-dark-white:#F2F2F2;
 $color-black: #201B19;
 
-
 $font-Montserrat: 'Montserrat', sans-serif;
+$font-Roboto: 'Roboto', sans-serif;
 $bold: 800;
+$medium: 500;
+$semiBold: 600;
 $thin: 100;
-$header-background: 'City';
+$margine-main-module: 390px;
 
 
 .navbar-module__dropButton::after {
@@ -40,12 +41,16 @@ body {
     padding: 0px;
     margin: 0;
     background: #ffffff;
+    // @include for-tablet-portrait-up {
+    //     border:11px solid red !important;
+    // }
 }
 
 .navbar-module {
     height: 80px;
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
+    height: auto;
     background-image: url('https://www.planetizen.com/files/images/sunlight.jpg');
     position: fixed;
     display: flex;
@@ -126,98 +131,157 @@ body {
 
 .header-module {
     background-image: url('https://www.planetizen.com/files/images/sunlight.jpg');
-    width: 100%;
+   width: 100%;
+    max-width: 100%;
     height: 450px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    top: 0;
+}
+
+.main-module-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 300px;
+    margin-right: 300px;
 }
 
 .main-module {
     width:100%;
     display: flex;
-    align-items: center;
-    // justify-content: center;
-    // flex-direction: column;
-    height: 250px;
-
+    flex-direction: column;
+    height: 100px;
 
     &__infoNTH {
-        height: 365px;
-        font: $font-Montserrat;
+        font-family: $font-Montserrat;
         font-weight: $bold;
-        font-size: 65;
+        font-size: 60px;
+        width:850px;
+        // @include phone {
+        //     border:11px solid pink;
+        //     font-size: 15px;
+        // }
+        // @include tablet {
+        //     border:11px solid red;
+        //     font-size: 30px;
+        // }
+        
     }
 
-    &__logoNTH {
-
+    &__logoNTH-data {
+        height: 200px;
     }
 
-}
-
-
-.grid-item {
-    font-weight: 800;
-    font-size: 32px;
-    padding: 20px;
-}
-
-.item-1 {
-    background: #DC2626;
-    // grid-column: 2 / 3;
-    // grid-column-start: 2;
-    // grid-column-end: 3;
-    // grid-area: header;
-    // grid-row-start: 2;
-    // grid-row-end: 4;
-    // grid-auto-rows: minmax(200px, auto);
-}
-
-.item-2 {
-    background: #059669;
-    // align-self: end;
-    // grid-area: content;
-  
-}
-.item-3 {
-    background: #f59e0b;
-    // grid-area: menu;
-}
-.item-4 {
-    background: #7c3aed;
-    // display: flex;
-    // align-items: left;
-    grid-column: 7/ 10;
-    grid-row: 3 / 5;
-
-        &__name {
-        text-align: left;
+    &__citiesNTH {
+        height: 16px;
+        font-family: $font-Montserrat;
+        color: $color-dark-grey1;
+        margin-left: 250px;
     }
-    // grid-column: 1 / 3
-    
 }
-.item-5 {
-    background: #2563eb;
-    // grid-area: footer;
-}
-
-.grid-wrapper {
+.read-more-module-conpanyInfo--container {
     display: grid;
-    grid-template-columns: repeat(12, 30px);
-    // grid-template-rows: 200px 300px;
-    grid-auto-rows: minmax(100px, aoto);
-    row-gap: 20px;
-    column-gap: 15px;
-    // height: 100vh;
-    // place-items: left;
-    // justify-items: start;
-    justify-content: center;
-    // align-content: space-around;
-    // align-items: start
-    // grid-template-areas: 
-    // "header header"
-    // "menu content"
-    // "menu content"
-    // "menu footer";
+    background-color: $color-dark-white;
+}
+// .container {
+//     padding-right: 360px;
+//     padding-left: 360px;
+// }
+
+.read-more-module-companyInfo {
+ margin-left: 10%;
+    margin-top: -20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: $color-dark-white;
+    font-family: $font-Montserrat;
+    height: 200px;
+    width: 80%;
+    justify-items: center;
+    align-items: center;  
+               
+
+        &__employees {
+            grid-column: 2;
+            font-size: 1rem;
+
+            &--size {
+                margin-top: 20px;
+                font-size: 1.3rem;
+                font-weight: $semiBold;
+            }      
+        }
+
+        &__establishment {
+            grid-column-start: 6;
+            grid-column-end: 7;
+            font-size: 1rem;
+
+            &--size {
+                font-size: 1.3rem;
+                margin-top: 20px;
+                font-weight: $semiBold;
+            }
+        }
+
+        &__industry {
+            grid-column-start: 10;
+            grid-column-end: 12;
+            font-size: 1rem;
+
+            &--size {
+                font-size: 1.3rem;
+                margin-top: 20px;
+                font-weight: $semiBold;
+            }
+        }
+}
+.red-more-module-servicesProvided__technologyIcon--size {
+    height: 70px;
+}
+.red-more-module-servicesProvided {
+    padding-left: $margine-main-module;
+    padding-right: $margine-main-module;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    margin-top: 8rem;
+    
+
+    &__title {
+        grid-column-start: 3;
+        grid-column-end: 10;
+        grid-template-columns: auto;
+        font-family: $font-Montserrat;
+        color: $color-dark-grey1;
+        font-size: 1rem;
+        font-weight: $medium;
+    }
+
+    &__body {
+        grid-column-start: 3;
+        grid-column-end: 10;
+        font-family: $font-Roboto;
+        font-size: 1rem;
+        
+    }
+
+    &__technology {
+        grid-column-start: 3;
+        grid-column-end: 10;
+        font-weight: $medium;
+        font-family: $font-Montserrat;
+        margin-top: 1rem;        
+    }
+}
+
+@media only screen and (max-width: 1024px) { 
+    .header-module  {
+    
+    }
 }
 
