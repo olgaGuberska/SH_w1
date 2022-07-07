@@ -1,5 +1,9 @@
 // *, *::before, *::after { box-sizing: border-box }
 
+:root {
+    font-size: 10px;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&family=Roboto:wght@100;400&display=swap');
 @import "breakpoint.scss";
@@ -26,21 +30,21 @@ $margine-main-module: 390px;
     content: " ";
     margin-left:10px;
     display: inline-block;
-    border-right: 2px solid $color-orange;
-    border-bottom: 2px solid $color-orange;
-    width: 10px;
-    height: 10px;
+    border-right: 0.2rem solid $color-orange;
+    border-bottom: 0.2rem solid $color-orange;
+    width: 1rem;
+    height: 1rem;
     transform: rotate(-315deg);
     @include smallDevices {
-        width: 5px;
-        height: 5px;
+        width: 0.5rem;
+        height: 0.5rem;
     }
     @include mediumDevices {
-        width: 7px;
-        height: 7px;
+        width: 0.7rem;
+        height: 0.7rem;
     }
     @include desktop {
-     
+    
     }
 }
 
@@ -51,35 +55,78 @@ body {
 }
 
 .navbar-module {
-    height: 80px;
+    height: 8rem;
     width: 100%;
-    max-width: 100%;
+    // max-width: 100%;
     height: auto;
     background-image: url('https://www.planetizen.com/files/images/sunlight.jpg');
     position: fixed;
     display: flex;
     top: 0;
-    
-    &-wrapper {
+    @include smallDevices {
+        width: auto;
+        // margin: 0; 
+        // padding: 0 0 0 0;
+        justify-content: last baseline;
+    }
+    @include mediumDevices {
+        width: auto;
+        justify-content: last baseline;
+        
+    }
+    @include largDevices {
         width: 100%;
         justify-content: space-between;
+        
+    }
+    @include desktop {
+        width: 100%;
+        // padding-left: 2rem;
+        // padding-right: 2 rem;
+        // justify-content: space-between;
+    }
+    
+    &-wrapper {
+        
         display: flex;
-        padding: 0 48px;
+       
+        @include smallDevices {
+            width: auto;
+            // margin:0;
+            padding: 0 0 0 0;
+            justify-content: last baseline;
+        }
+        @include mediumDevices {
+            width: auto; 
+        }
+        @include largDevices {
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 4.8rem;
+        }
+        @include desktop {
+            width: 100%;
+        }
     }
 
     &__navigation {
         display: flex; 
         justify-content: end;     
         list-style-type: none; 
-        height: 50px;
+        height: 5rem;
         @include smallDevices {
-            height: 20px;
+            height: 2rem;
         }
         @include mediumDevices {
-            height: 40px;
+            height: 3rem;
+        }
+        @include largDevices {
+            height: 4rem;
+            justify-content: end;
         }
         @include desktop {
-         
+            height: 5rem;
+            justify-content: end;
         }
     }
 
@@ -89,27 +136,53 @@ body {
     }
 
     &__svgLogo {
-        height: 26px;
+        height: 2.6rem;
         @include smallDevices {
-            
-            height: 15px;
+            height: 1.3rem;
         }
         @include mediumDevices {
-            // width: 7px;
-            height: 20px;
+            height: 1.8rem;
+        }
+        @include largDevices {
+            height: 2.0rem;
         }
         @include desktop {
-         
+            height: 2.6rem;
         }
     }
 
     &__dropDownList {
-        padding: 10px;
+        padding: 1rem;
         left: auto;
+        @include smallDevices {
+            padding: 0rem;
+        }
+        @include mediumDevices {
+            padding: 0rem;
+        }
+        @include largDevices {
+            padding: 0.2rem;
+        }
+        @include desktop {
+            padding: 1rem;
+        }
         
         &--active {
             border-bottom-style: dashed;
+            @include smallDevices {
+                padding: 0rem;
+            }
+            @include mediumDevices {
+                padding: 0rem;
+            }
+            @include largDevices {
+                padding: 0.2rem;
+            }
+            @include desktop {
+                padding: 1rem;
+            }
         }
+      
     }
 
     &__dropButton {
@@ -118,32 +191,98 @@ body {
         font-family: $font-Montserrat;
         font-weight: $bold;
         border: transparent;
-        font-size: 16px;    
+        font-size: 1.6rem;    
+        @include smallDevices {
+            font-size: 0.8rem;
+        }
+        @include mediumDevices {
+            font-size: 1.2rem;
+        }
+        @include largDevices {
+            font-size: 1.4rem;
+        }
+        @include desktop {
+            font-size: 1.6rem;
+        }
     }
   
     &__link {
         padding: 10px;
-        font-family: $font-Montserrat
+        font-family: $font-Montserrat;
+        @include smallDevices {
+            padding: 0rem; 
+        }
+        @include mediumDevices {
+            padding: 0rem;
+        }
+        @include largDevices {
+            padding: 0.2rem;
+        }
+        @include desktop {
+            padding: 1rem;
+        }
     }
 
     &__element {
-    text-decoration: none;
-    color:  $color-dark-grey2;
-    font-size: 16px;
+        text-decoration: none;
+        color:  $color-dark-grey2;
+        font-size: 1.6rem;
+        @include smallDevices {
+            font-size: 0.8rem;
+        }
+        @include mediumDevices {
+            font-size: 1.2rem;
+        }
+        @include largDevices {
+            font-size: 1.4rem;
+        }
+        @include desktop {
+            font-size: 1.6rem;
+        }
     }
 
     &__projects {
         padding: 10px;
+        @include smallDevices {
+            padding: 0rem; 
+        }
+        @include mediumDevices {
+            padding: 0rem;
+        }
+        @include largDevices {
+            padding: 0.2rem;
+        }
+        @include desktop {
+            padding: 1rem;
+        }
     }
     &__button {
-        margin-left: 16px;
-        padding: 16px 32px;
+        margin-left: 1.6rem;
+        padding: 1.6rem 3.2rem;
         background-color: $color-red;
         text-decoration: none;
         border: none;
         font-family: $font-Montserrat;
         color: $color-white;
-        font-size: 16px;
+        font-size: 1.6rem;
+        @include smallDevices {
+            font-size: 0.8rem;
+            margin:0;
+            padding: 0;
+        }
+        @include mediumDevices {
+            font-size: 1.2rem;
+            margin:0;
+            padding: 0;
+        }
+        @include largDevices {
+            font-size: 1.4rem;
+            margin-left:0.8rem;
+            padding: 1rem 2rem;
+        }
+        @include desktop {
+            font-size: 1.6rem;
+        }
     }
 
 }
@@ -155,22 +294,68 @@ body {
 
 .header-module {
     background-image: url('https://www.planetizen.com/files/images/sunlight.jpg');
-   width: 100%;
-    max-width: 100%;
+    width: 100%;
     height: 450px;
     display: flex;
     flex-direction: row;
     align-items: center;
     top: 0;
+    @include smallDevices {
+        width: auto;
+        margin:0;
+        padding: 0;
+        align-items: start;
+    }
+    @include mediumDevices {
+        font-size: 1.2rem;
+        margin:0;
+        padding: 0;
+        align-items: start;
+    }
+    @include largDevices {
+        font-size: 1.4rem;
+        margin-left:0.8rem;
+        align-items: center;
+    }
+    @include desktop {
+        font-size: 1.6rem;
+        align-items: center;
+    }
 }
 
 .main-module-wrapper {
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    // flex-direction: row;
     align-items: center;
-    margin-left: 300px;
-    margin-right: 300px;
+   
+    @include smallDevices {
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        // margin:0;
+        padding: 0;
+        flex-direction: row;
+        align-items: end;
+    }
+    @include mediumDevices {
+        font-size: 1.2rem;
+        // margin:0;
+        padding: 0;
+        align-items: end;
+    }
+    @include largDevices {
+        font-size: 1.4rem;
+        margin-left: 20.0rem;
+        margin-right: 20.0rem;
+        align-items: center;
+    }
+    @include desktop {
+        font-size: 1.6rem;
+        margin-left: 30.0rem;
+        margin-right: 30.0rem;
+        align-items: center;
+    }
 }
 
 .main-module {
@@ -182,28 +367,68 @@ body {
     &__infoNTH {
         font-family: $font-Montserrat;
         font-weight: $bold;
-        font-size: 60px;
-        width:850px;
-        // @include phone {
-        //     border:11px solid pink;
-        //     font-size: 15px;
-        // }
-        // @include tablet {
-        //     border:11px solid red;
-        //     font-size: 30px;
-        // }
+        
+        @include smallDevices {
+            width: auto;
+            font-size: 2rem; 
+            padding: 0;
+            // justify-self: center ;
+            // align-items: center;
+        }
+        @include mediumDevices {
+            font-size: 3rem;
+            padding: 0;
+            align-items: center;
+            width:30rem;
+        }
+        @include largDevices {
+            font-size: 5rem;
+            align-items: center;
+            width: 60rem;
+        }
+        @include desktop {
+            font-size: 6rem;
+            align-items: center;
+            width:85rem;
+        }
         
     }
 
     &__logoNTH-data {
-        height: 200px;
+        
+        @include smallDevices {
+          height: 10rem
+        }
+        @include mediumDevices {
+            height: 14rem;;
+        }
+        @include largDevices {
+          height: 18rem;
+        }
+        @include desktop {
+            height: 20rem;
+        }
     }
 
     &__citiesNTH {
-        height: 16px;
+        height: 1.6rem;
         font-family: $font-Montserrat;
         color: $color-dark-grey1;
-        margin-left: 250px;
+        
+        @include smallDevices {
+            height: 1.6rem;
+            margin: 0;
+          }
+          @include mediumDevices {
+             
+          }
+          @include largDevices {
+            margin-left: 10rem;
+          }
+          @include desktop {
+            margin-left: 25rem;
+          }
+        
     }
 }
 .read-more-module-conpanyInfo--container {
@@ -230,7 +455,7 @@ body {
             grid-column: 2;
             grid-row: 3;
             align-self: start;
-            font-size: 1rem;
+            font-size: 1.6rem;
 
             // &--size {
             //     margin-top: 20px;
@@ -242,7 +467,7 @@ body {
 
         &__employeesNumber--size {
             grid-row: 4;
-            font-size: 1.3rem;
+            font-size: 1.9rem;
             font-weight: $semiBold;
             grid-column: 2;
             justify-self: start;
@@ -254,12 +479,12 @@ body {
             grid-column-start: 6;
             grid-column-end: 7;
             grid-row: 3;
-            font-size: 1rem;
+            font-size: 1.6rem;
             align-self: start;
         }
 
         &__establishmentYear--size {
-            font-size: 1.3rem;
+            font-size: 1.9rem;
             font-weight: $semiBold;
             grid-column-start: 6;
             grid-column-end: 7;
@@ -272,13 +497,13 @@ body {
             grid-column-start: 9;
             grid-column-end: 11;
             justify-self: start;
-            font-size: 1rem;
+            font-size: 1.6rem;
             align-self: start;
             grid-row: 3;
         }
 
         &__industryDescription--size {
-            font-size: 1.3rem;
+            font-size: 1.9rem;
             font-weight: $semiBold;
             grid-column-start: 9;
             grid-column-end: 11;
@@ -307,7 +532,7 @@ body {
         grid-template-columns: auto;
         font-family: $font-Montserrat;
         color: $color-dark-grey1;
-        font-size: 1rem;
+        font-size: 1.6rem;
         font-weight: $medium;
     }
 
@@ -316,7 +541,8 @@ body {
         grid-row-start: 2;
         grid-column-end: 10;
         font-family: $font-Roboto;
-        font-size: 1rem;
+        font-size: 1.7rem;
+        color: $color-dark-grey1;
         
     }
 
@@ -326,7 +552,9 @@ body {
         grid-row-start: 3;
         font-weight: $medium;
         font-family: $font-Montserrat;
+        font-size: 1.6rem;
         margin-top: 1rem;        
+        color: $color-dark-grey1;
     }
 
     &__technologyIcon {
@@ -334,9 +562,11 @@ body {
         grid-row-start: 4;
         font-weight: $medium;
         font-family: $font-Montserrat;
-        margin-top: 1rem;    
-        justify-self: center;  
-        align-items: baseline; 
+        margin-top: 1.6rem;    
+        justify-self: center;
+        // &--size {
+          
+        // }
     }
 
 

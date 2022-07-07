@@ -5,16 +5,22 @@ $breakpoints: (
 );
 
 @mixin smallDevices {
-    @media (min-width: 576px) { @content; }
+    @media (min-width: 340px) { @content; }
 }
 
 @mixin mediumDevices {
     @media (min-width: 768px) { @content; }
 }
 
-@mixin desktop {
+@mixin largDevices {
     @media (min-width: 1024px) { @content; }
 }    
+
+@mixin desktop {
+    @media (min-width: 1200px) { @content; }
+} 
+
+
 
 // @media only screen and (max-width: 1024px) { 
 //     .navbar-module__navigation  {
