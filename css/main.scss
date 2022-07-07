@@ -32,7 +32,15 @@ $margine-main-module: 390px;
     height: 10px;
     transform: rotate(-315deg);
     @include smallDevices {
-
+        width: 5px;
+        height: 5px;
+    }
+    @include mediumDevices {
+        width: 7px;
+        height: 7px;
+    }
+    @include desktop {
+     
     }
 }
 
@@ -40,9 +48,6 @@ body {
     padding: 0px;
     margin: 0;
     background: #ffffff;
-    // @include for-tablet-portrait-up {
-    //     border:11px solid red !important;
-    // }
 }
 
 .navbar-module {
@@ -67,6 +72,15 @@ body {
         justify-content: end;     
         list-style-type: none; 
         height: 50px;
+        @include smallDevices {
+            height: 20px;
+        }
+        @include mediumDevices {
+            height: 40px;
+        }
+        @include desktop {
+         
+        }
     }
 
     &__logo {
@@ -76,6 +90,17 @@ body {
 
     &__svgLogo {
         height: 26px;
+        @include smallDevices {
+            
+            height: 15px;
+        }
+        @include mediumDevices {
+            // width: 7px;
+            height: 20px;
+        }
+        @include desktop {
+         
+        }
     }
 
     &__dropDownList {

@@ -8,16 +8,12 @@ $breakpoints: (
     @media (min-width: 576px) { @content; }
 }
 
-@mixin fmediumDevices {
+@mixin mediumDevices {
     @media (min-width: 768px) { @content; }
 }
 
-@mixin largeDevices {
-    @media (max-width: 992px) { @content; }
-}
-
 @mixin desktop {
-    @media (min-width: 1200px) { @content; }
+    @media (min-width: 1024px) { @content; }
 }    
 
 // @media only screen and (max-width: 1024px) { 
