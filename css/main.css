@@ -689,10 +689,13 @@ body {
 }
 
 .red-more-module-servicesProvided__technologyIcon {
-  grid-area: 4 / 3 / 4 / 11;
+  grid-area: 4 / 3 / 4 / 10;
   grid-row-start: 4;
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
   margin-top: 1.6rem;
-  justify-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
 }

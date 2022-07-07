@@ -558,15 +558,16 @@ body {
     }
 
     &__technologyIcon {
-        grid-area: 4 / 3 / 4 / 11;
+        grid-area: 4 / 3 / 4 / 10;
         grid-row-start: 4;
         font-weight: $medium;
         font-family: $font-Montserrat;
         margin-top: 1.6rem;    
-        justify-self: center;
-        // &--size {
-          
-        // }
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+        
     }
 
 
