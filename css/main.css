@@ -699,3 +699,46 @@ body {
   align-items: stretch;
   justify-content: space-between;
 }
+
+.red-more-module-CEO {
+  padding-left: 390px;
+  padding-right: 390px;
+  height: 450px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(5, 2fr);
+  margin-top: 8rem;
+}
+
+.red-more-module-CEO__img {
+  grid-column: 1/ 5;
+}
+
+.red-more-module-CEO__img--size {
+  height: 60rem;
+}
+
+.red-more-module-CEO__body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 3.8rem;
+  grid-column: 6 /11;
+  font-style: italic;
+  margin: 0;
+}
+
+.red-more-module-CEO__body--weight {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.red-more-module-CEO__body--size {
+  font-size: 2rem;
+}
+
+.red-more-module-CEO__body-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 40rem;
+  justify-content: space-between;
+}

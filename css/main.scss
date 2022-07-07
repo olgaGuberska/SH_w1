@@ -22,7 +22,7 @@ $font-Roboto: 'Roboto', sans-serif;
 $bold: 800;
 $medium: 500;
 $semiBold: 600;
-$thin: 100;
+$light: 100;
 $margine-main-module: 390px;
 
 
@@ -569,7 +569,47 @@ body {
         justify-content: space-between;
         
     }
+}
 
+.red-more-module-CEO {
+    padding-left: $margine-main-module;
+    padding-right: $margine-main-module;
+    height: 450px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 2fr);
+    margin-top: 8rem;
+
+    &__img {
+        grid-column: 1/ 5;
+        &--size{
+            height: 60rem;
+        }
+    }
+
+    &__body {
+        font-family: $font-Roboto;
+        font-weight: $light;
+        font-size: 3.8rem;
+        grid-column: 6 /11;
+        font-style: italic;
+        margin: 0;
+
+        &--weight{
+            font-weight: $bold;
+            font-size: 2rem;
+        }
+
+        &--size {
+            font-size: 2rem;;
+        }
+        &-wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 40rem;
+            justify-content: space-between;
+        }
+    }
 
 }
 
