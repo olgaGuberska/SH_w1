@@ -2,11 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&family=Roboto:wght@100;400&display=swap');
-
-// $breakpoint-tablet: 768px;
-
-// @media (min-width: $b)
-
+@import "breakpoint.scss";
 
 $color-red: #E92F03;
 $color-orange: #E13C12;
@@ -35,6 +31,9 @@ $margine-main-module: 390px;
     width: 10px;
     height: 10px;
     transform: rotate(-315deg);
+    @include smallDevices {
+
+    }
 }
 
 body {
@@ -192,51 +191,75 @@ body {
 // }
 
 .read-more-module-companyInfo {
- margin-left: 10%;
+    margin-left: 15%;
     margin-top: -20px;
     display: grid;
+    gap:10px;
     grid-template-columns: repeat(12, 1fr);
     background-color: $color-dark-white;
     font-family: $font-Montserrat;
     height: 200px;
-    width: 80%;
-    justify-items: center;
-    align-items: center;  
-               
-
+    width: 70%;
+    
         &__employees {
             grid-column: 2;
+            grid-row: 3;
+            align-self: start;
             font-size: 1rem;
 
-            &--size {
-                margin-top: 20px;
-                font-size: 1.3rem;
-                font-weight: $semiBold;
-            }      
+            // &--size {
+            //     margin-top: 20px;
+            //     grid-row: 2;
+            //     font-size: 1.3rem;
+            //     font-weight: $semiBold;
+            // }      
+        }
+
+        &__employeesNumber--size {
+            grid-row: 4;
+            font-size: 1.3rem;
+            font-weight: $semiBold;
+            grid-column: 2;
+            justify-self: start;
+            align-self: start;
+            margin-bottom: 30px;
         }
 
         &__establishment {
             grid-column-start: 6;
             grid-column-end: 7;
+            grid-row: 3;
             font-size: 1rem;
+            align-self: start;
+        }
 
-            &--size {
-                font-size: 1.3rem;
-                margin-top: 20px;
-                font-weight: $semiBold;
-            }
+        &__establishmentYear--size {
+            font-size: 1.3rem;
+            font-weight: $semiBold;
+            grid-column-start: 6;
+            grid-column-end: 7;
+            grid-row: 4;
+            justify-self: start;
+            align-self: start;
         }
 
         &__industry {
-            grid-column-start: 10;
-            grid-column-end: 12;
+            grid-column-start: 9;
+            grid-column-end: 11;
+            justify-self: start;
             font-size: 1rem;
+            align-self: start;
+            grid-row: 3;
+        }
 
-            &--size {
-                font-size: 1.3rem;
-                margin-top: 20px;
-                font-weight: $semiBold;
-            }
+        &__industryDescription--size {
+            font-size: 1.3rem;
+            font-weight: $semiBold;
+            grid-column-start: 9;
+            grid-column-end: 11;
+            grid-row: 4;
+            align-self: start;
+            justify-self: start;
         }
 }
 .red-more-module-servicesProvided__technologyIcon--size {
@@ -245,16 +268,17 @@ body {
 .red-more-module-servicesProvided {
     padding-left: $margine-main-module;
     padding-right: $margine-main-module;
-    height: 200px;
+    height: 450px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: repeat(5, 2fr);
     margin-top: 8rem;
     
 
     &__title {
-        grid-column-start: 3;
-        grid-column-end: 10;
+        grid-column: 3 /10;
+        // grid-column-end: 10;
+        grid-row-start: 1;
         grid-template-columns: auto;
         font-family: $font-Montserrat;
         color: $color-dark-grey1;
@@ -264,6 +288,7 @@ body {
 
     &__body {
         grid-column-start: 3;
+        grid-row-start: 2;
         grid-column-end: 10;
         font-family: $font-Roboto;
         font-size: 1rem;
@@ -273,10 +298,23 @@ body {
     &__technology {
         grid-column-start: 3;
         grid-column-end: 10;
+        grid-row-start: 3;
         font-weight: $medium;
         font-family: $font-Montserrat;
         margin-top: 1rem;        
     }
+
+    &__technologyIcon {
+        grid-area: 4 / 3 / 4 / 11;
+        grid-row-start: 4;
+        font-weight: $medium;
+        font-family: $font-Montserrat;
+        margin-top: 1rem;    
+        justify-self: center;  
+        align-items: baseline; 
+    }
+
+
 }
 
 @media only screen and (max-width: 1024px) { 
